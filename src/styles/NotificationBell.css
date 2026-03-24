@@ -1,0 +1,171 @@
+/* Bell Button */
+
+.notif-bell-wrapper {
+  position: relative;
+}
+
+.notif-bell-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.notif-bell-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.notif-bell-btn.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Dropdown Menu */
+
+.notif-bell-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.notif-bell-menu-header {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.notif-bell-menu-body {
+  padding: 1rem;
+}
+
+.notif-bell-status-text {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: #333;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.notif-bell-status-hint {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  color: #999;
+  line-height: 1.4;
+  font-style: normal;
+}
+
+.notif-bell-denied {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #c62828;
+  line-height: 1.4;
+  font-style: normal;
+}
+
+.notif-bell-action-btn {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.notif-bell-action-btn.enable {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.notif-bell-action-btn.enable:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.notif-bell-action-btn.disable {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+.notif-bell-action-btn.disable:hover:not(:disabled) {
+  background: #eee;
+}
+
+.notif-bell-action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* In-App Toast */
+
+.notif-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.25rem;
+  z-index: 9999;
+  max-width: 340px;
+  cursor: pointer;
+  animation: notif-slide-in 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+@keyframes notif-slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notif-toast-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.notif-toast-body {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .notif-bell-menu {
+    width: 260px;
+    right: -10px;
+  }
+
+  .notif-toast {
+    left: 16px;
+    right: 16px;
+    max-width: none;
+  }
+}

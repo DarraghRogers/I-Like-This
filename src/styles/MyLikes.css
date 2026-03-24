@@ -1,0 +1,133 @@
+.my-likes-container {
+  padding: 20px;
+  width: 100%;
+}
+
+.my-likes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 0;
+}
+
+.like-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.like-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.like-card-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.like-card-content {
+  padding: 12px;
+}
+
+.like-card-name {
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.like-card-brand {
+  margin: 0 0 10px 0;
+  font-size: 0.8rem;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.like-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.like-card-view,
+.like-card-unlike {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.like-card-view {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.like-card-view:hover {
+  background-color: #45a049;
+}
+
+.like-card-unlike {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.like-card-unlike:hover {
+  background-color: #e0e0e0;
+}
+
+.my-likes-loading,
+.my-likes-error {
+  padding: 40px 20px;
+  text-align: center;
+  color: #666;
+}
+
+.my-likes-error {
+  color: #d32f2f;
+}
+
+.my-likes-empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: #999;
+}
+
+.my-likes-empty p {
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .my-likes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+  }
+
+  .like-card-image {
+    height: 100px;
+  }
+
+  .like-card-name {
+    font-size: 0.85rem;
+  }
+
+  .like-card-brand {
+    font-size: 0.75rem;
+  }
+}
